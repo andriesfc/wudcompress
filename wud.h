@@ -1,23 +1,23 @@
-typedef struct 
+typedef struct
 {
-	unsigned int		magic0;
-	unsigned int		magic1;
-	unsigned int		sectorSize;
-	unsigned long long	uncompressedSize;
-	unsigned int		flags;
+    unsigned int		magic0;
+    unsigned int		magic1;
+    unsigned int		sectorSize;
+    unsigned long long	uncompressedSize;
+    unsigned int		flags;
 }wuxHeader_t;
 
-typedef struct  
+typedef struct
 {
-	FILE*			fileWud;
-	long long		uncompressedSize;
-	bool			isCompressed;
-	// data only used when compressed
-	unsigned int	sectorSize;
-	unsigned int	indexTableEntryCount;
-	unsigned int*	indexTable;
-	long long		offsetIndexTable;
-	long long		offsetSectorArray;
+    FILE*			fileWud;
+    long long		uncompressedSize;
+    bool			isCompressed;
+    // data only used when compressed
+    unsigned int	sectorSize;
+    unsigned int	indexTableEntryCount;
+    unsigned int*	indexTable;
+    long long		offsetIndexTable;
+    long long		offsetSectorArray;
 }wud_t;
 
 #define WUX_MAGIC_0	'0XUW' // "WUX0"

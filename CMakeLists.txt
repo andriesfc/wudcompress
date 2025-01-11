@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.30.5)
+project(wudcompress)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_COMPILER "/usr/bin/clang++" CACHE STRING "C++ compiler" FORCE)
+add_executable(wudc main.cpp wud.cpp)
