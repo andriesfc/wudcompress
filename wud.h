@@ -23,6 +23,15 @@ typedef struct
 #define WUX_MAGIC_0	'0XUW' // "WUX0"
 #define WUX_MAGIC_1	0x1099d02e
 
+#include <stdio.h>
+#ifdef _WIN32
+#include <io.h>
+#define ftello _ftelli64
+#define fseeko _fseeki64
+#endif
+
+
+
 // wud and wux functions
 wud_t* wud_open(char* path); // handles both, compressed and uncompressed files
 void wud_close(wud_t* wud);

@@ -3,6 +3,12 @@
 #include<string.h>
 #include"wud.h"
 
+#ifdef _WIN32
+#include <io.h>
+#define ftello _ftelli64
+#define fseeko _fseeki64
+#endif
+
 /*
  * WUX file structure (v1.0):
 		[Header]
